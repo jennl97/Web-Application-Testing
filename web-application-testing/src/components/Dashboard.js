@@ -1,27 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
-
-// const addHIt = hit = hit + 1; 
-
-const Dashboard = () => {
-    
-    //set state
-    const [strike, setStrike] = useState(0);
-    const [hit, setHit] = useState(0);
-    const [ball, setBall] = useState(0);
-    const [foul, setFoul] = useState(0)
- 
-    return(
+const Dashboard = props =>{
+    console.log("Dashboard: ", props);
+      return(
         <div>
-            <button>Strike</button>
-            <button>Ball</button>
-            <button>Foul</button>
-            <button
-            onClick={() => setHit(hit + 1)}            
-            >Hit</button>
-        </div>
-    )
-}
+                <button onClick = {() => props.isStrike()}>Strike</button>
+                <button onClick = {() => props.isBall()}>Ball</button>
+                <button onClick={() => props.isFoul()}>Foul</button>
+                <button onClick = {() => props.isHit()}>Hit</button>
+            </div>
+        )
+    }
+
 
 export default Dashboard;
